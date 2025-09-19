@@ -1,7 +1,7 @@
 # Sweet Escape - Frontend
 
 This is the frontend for the "Sweet Escape" application, a modern, interactive web app for browsing and managing a sweet shop's inventory. It's built with React, TypeScript, and Vite, and styled with Tailwind CSS and shadcn/ui.
-
+## live link: https://sweet-escape.netlify.app
 ## ✨ Features
 
 -   **Stunning Landing Page**: A beautiful, animated landing page to welcome users.
