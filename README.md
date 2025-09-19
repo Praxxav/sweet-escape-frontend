@@ -60,8 +60,8 @@ In summary, Gemini Code Assist acted as a pair programmer throughout the develop
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
-    cd sweet_shop/frontend
+    git clone https://github.com/Praxxav/sweet-escape-frontend.git
+    cd sweet-escape-frontend
     ```
 
 2.  **Install dependencies:**
