@@ -44,11 +44,32 @@ User dashboard
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/925c3bb6-af39-4b64-a46c-0b9671ee73a8" />
 
 ## My AI Usage
-## AI-Assisted Development with Gemini Code Assist
-In summary, Gemini Code Assist acted as a pair programmer throughout the development of this frontend, accelerating the process, improving code quality, and helping to implement features efficiently and correctly.
- **Boilerplate Code:** Gemini was instrumental in quickly generating the boilerplate for React components using TypeScript and `tsx`. This included functional components with props, state management hooks (`useState`, `useEffect`), and basic JSX structure.
--   **Forms:** Components like `LoginForm.tsx` and `SignUpForm.tsx` were scaffolded, including state management for form fields, submission handlers, and integration with Zod for validation.
--   **Dashboards:** The structure for both the user `Dashboard.tsx` and `AdminDashboard.tsx` was generated, including layouts for displaying data in grids and tables, and the implementation of the modal form for adding/editing sweets.
+
+## AI-Assisted Development
+
+This project was built with significant assistance from AI tools that acted as a pair programmer and productivity booster throughout the development process.
+
+### Tools Used
+- **Gemini Code Assist** – for generating boilerplate, scaffolding components, and improving TypeScript usage.
+- **ChatGPT** – for troubleshooting errors, configuring tools (like ESLint, Jest, and Vercel/Render deploy scripts), and suggesting best practices.
+- **GitHub Copilot** – (if enabled in editor) for inline code completions and quick utility snippets.
+
+### How I Used Them
+- **Boilerplate & Components:** I used Gemini to scaffold React components (`tsx`) with proper TypeScript typings, state hooks, and props setup.  
+- **Forms:** Gemini generated login and signup forms (`LoginForm.tsx`, `SignUpForm.tsx`) with field state management, validation via Zod, and submit handlers.  
+- **Dashboards:** I leveraged Gemini to scaffold dashboards (`Dashboard.tsx`, `AdminDashboard.tsx`) including layouts, grid structures, and modal form implementations.  
+- **Error Troubleshooting:** I used ChatGPT to debug configuration issues (e.g., Jest ES module errors, missing `test` script, Vercel/Render deployment fixes, CloudFront + S3 permissions).  
+- **DevOps & Config:** ChatGPT helped write `netlify.toml`, deployment scripts, ESLint configs, and guided me through Git/GitHub workflows.  
+- **Unit Testing:** I asked AI tools to generate starter test examples and explain test report setups (Jest/Vitest).  
+
+### Reflection on AI’s Impact
+Using AI tools significantly accelerated my development process:
+- I spent less time on repetitive boilerplate and more time on business logic.  
+- Debugging was faster since I could get step-by-step explanations and solutions without searching multiple forums.  
+- I gained confidence in TypeScript and deployment workflows by learning from AI-generated examples.  
+- However, I still needed to carefully review AI-generated code to ensure correctness, security, and maintainability.  
+
+In summary, AI acted as a **collaborative coding assistant**, improving code quality, reducing development time, and helping me learn new tools more efficiently.
 
 
 ### Prerequisites
