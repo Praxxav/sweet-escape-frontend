@@ -31,6 +31,26 @@ This is the frontend for the "Sweet Escape" application, a modern, interactive w
 
 ## 🚀 Getting Started
 
+## Images
+Ladnding page
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0dfc98b8-7220-4615-bf2e-25ee523d289e" />
+signin
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/75148f4b-cf5f-4d5c-b131-f064f376e5f3" />
+signup
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9b64170f-e2e4-431e-a364-c8169a1a1210" />
+Admin dashboard
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d5b4c75e-875f-4f5a-bfdf-8cec874be2ea" />
+User dashboard
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/925c3bb6-af39-4b64-a46c-0b9671ee73a8" />
+
+## My AI Usage
+## AI-Assisted Development with Gemini Code Assist
+In summary, Gemini Code Assist acted as a pair programmer throughout the development of this frontend, accelerating the process, improving code quality, and helping to implement features efficiently and correctly.
+ **Boilerplate Code:** Gemini was instrumental in quickly generating the boilerplate for React components using TypeScript and `tsx`. This included functional components with props, state management hooks (`useState`, `useEffect`), and basic JSX structure.
+-   **Forms:** Components like `LoginForm.tsx` and `SignUpForm.tsx` were scaffolded, including state management for form fields, submission handlers, and integration with Zod for validation.
+-   **Dashboards:** The structure for both the user `Dashboard.tsx` and `AdminDashboard.tsx` was generated, including layouts for displaying data in grids and tables, and the implementation of the modal form for adding/editing sweets.
+
+
 ### Prerequisites
 
 -   Node.js (v18 or higher)
