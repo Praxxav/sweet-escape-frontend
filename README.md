@@ -1,69 +1,64 @@
-# React + TypeScript + Vite
+# Sweet Escape - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the "Sweet Escape" application, a modern, interactive web app for browsing and managing a sweet shop's inventory. It's built with React, TypeScript, and Vite, and styled with Tailwind CSS and shadcn/ui.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Stunning Landing Page**: A beautiful, animated landing page to welcome users.
+-   **Robust Authentication**: Separate, clean forms for user Sign Up and Sign In.
+-   **Interactive User Dashboard**:
+    -   Displays a grid of all available sweets fetched dynamically from the backend.
+    -   Users can specify a quantity and purchase items.
+    -   Real-time inventory updates after a purchase.
+    -   Search and filter functionality to easily find sweets.
+-   **Powerful Admin Dashboard**:
+    -   A secure, separate dashboard for shop administrators.
+    -   Full **CRUD (Create, Read, Update, Delete)** functionality for managing the sweet inventory.
+    -   An intuitive table view of all sweets.
+    -   A modal-based form for adding and editing sweet details.
+    -   **Purchase History**: A log that shows which user purchased which sweet, in what quantity, and when.
+-   **Client-Side Routing**: Seamless navigation powered by `react-router-dom`.
+-   **Admin-Specific Login**: A convenient toggle on the login form to auto-fill admin credentials for easy access during development and testing.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-   **Framework**: React
+-   **Build Tool**: Vite
+-   **Language**: TypeScript
+-   **Styling**: Tailwind CSS & shadcn/ui
+-   **Routing**: React Router
+-   **HTTP Client**: Axios
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-   Node.js (v18 or higher)
+-   npm or yarn
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Installation & Setup
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd sweet_shop/frontend
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Configure Backend URL:**
+    Make sure the `BACKEND_URL` in `src/config.ts` points to your running backend server (e.g., `http://localhost:3000`).
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
+
+---
+
+This project was built to demonstrate a full-stack application with clear separation of concerns between user and admin roles, dynamic data fetching, and a modern, responsive user interface.

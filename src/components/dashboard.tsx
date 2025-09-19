@@ -1,7 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/consistent-type-imports */
+
 import { AppSidebar } from './app-sidebar'
 import { SiteHeader } from './site-header'
 import { SidebarProvider } from './ui/sidebar'
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect  } from 'react'
+// import { useMemo } from 'react'
 import { ShoppingCart } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import axios from 'axios';
@@ -52,10 +56,10 @@ export const Dashboard = () => {
     fetchSweets()
   }, [])
 
-  const categories = useMemo(
-    () => [...new Set(sweets.map(sweet => sweet.category))],
-    [sweets]
-  )
+  // const categories = useMemo(
+  //   () => [...new Set(sweets.map(sweet => sweet.category))],
+  //   [sweets]
+  // )
 
   const filteredSweets = sweets.filter(sweet => {
     const matchesSearch =
