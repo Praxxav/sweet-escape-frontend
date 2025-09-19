@@ -4,12 +4,12 @@
 import { AppSidebar } from './app-sidebar'
 import { SiteHeader } from './site-header'
 import { SidebarProvider } from './ui/sidebar'
-import { useState, useEffect  } from 'react'
-// import { useMemo } from 'react'
+import { useState, useEffect } from 'react';
 import { ShoppingCart } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import axios from 'axios';
-import { BACKEND_URL } from '../config'
+import { BACKEND_URL } from '../config';
+import { LoadingSpinner } from '../lib/loading';
 
 interface Sweet {
   id: number | string;
@@ -25,6 +25,7 @@ export const Dashboard = () => {
   const [sweets, setSweets] = useState<Sweet[]>([])
   const [searchTerm, setSearchTerm] = useState('')
   const [purchaseQuantities, setPurchaseQuantities] = useState<Record<string | number, number>>({});
+  const [purchasingSweetId, setPurchasingSweetId] = useState<number | string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('')
 
   // ✅ Fetch sweets from backend
@@ -72,6 +73,7 @@ export const Dashboard = () => {
 
   // ✅ Handle purchase with backend call
   const handlePurchase = async (sweetId: number | string, quantityToPurchase: number) => {
+    setPurchasingSweetId(sweetId);
     try {
       const token = localStorage.getItem("token")
       if (!token) {
@@ -113,6 +115,8 @@ export const Dashboard = () => {
     } catch (error) {
       console.error("Purchase failed", error)
       alert("Failed to purchase sweet. Try again later.")
+    } finally {
+      setPurchasingSweetId(null);
     }
   }
   
@@ -195,15 +199,16 @@ export const Dashboard = () => {
                           />
                           <button
                             onClick={() => handlePurchase(sweet.id, purchaseQuantities[sweet.id] || 1)}
-                            disabled={sweet.quantity === 0}
-                            className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+                            disabled={sweet.quantity === 0 || purchasingSweetId === sweet.id}
+                            className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all w-[88px] h-9 ${
                               sweet.quantity > 0
                                 ? 'bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm hover:shadow'
                                 : 'bg-muted text-muted-foreground cursor-not-allowed'
                             }`}
                           >
-                            <ShoppingCart size={16} />
-                            Buy
+                            {purchasingSweetId === sweet.id ? <LoadingSpinner /> : (
+                              <><ShoppingCart size={16} /> Buy</>
+                            )}
                           </button>
                         </div>
                       </div>

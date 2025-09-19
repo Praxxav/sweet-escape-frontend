@@ -8,12 +8,14 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { signinInput } from "../zod";
 import { BACKEND_URL } from "../config";
+import { LoadingSpinner } from "../lib/loading";
 
 export function LoginForm({ className, ...props }: React.ComponentProps<"form">) {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isAdminLogin, setIsAdminLogin] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleAdminToggle = (checked: boolean) => {
     setIsAdminLogin(checked);
@@ -30,6 +32,7 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"form">)
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setIsLoading(true);
 
     // Validate inputs
     const result = signinInput.safeParse({ email, password });
@@ -56,6 +59,8 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"form">)
     } catch (e) {
       console.error(e);
       alert("Error while signing in. Please check your credentials.");
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -114,8 +119,12 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"form">)
           />
         </div>
 
-        <Button type="submit" className="w-full">
-          Login
+        <Button type="submit" className="w-full" disabled={isLoading}>
+          {isLoading ? (
+            <LoadingSpinner className="h-5 w-5" />
+          ) : (
+            "Login"
+          )}
         </Button>
 
       </div>

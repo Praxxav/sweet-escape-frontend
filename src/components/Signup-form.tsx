@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RegisterInput } from "../zod";
 import { BACKEND_URL } from "../config";
+import { LoadingSpinner } from "../lib/loading";
 
 export function SignUpForm({
   className,
@@ -17,9 +18,11 @@ export function SignUpForm({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setIsLoading(true);
     try {
       const result = RegisterInput.safeParse({ name, email, password });
       if (!result.success) {
@@ -34,6 +37,8 @@ export function SignUpForm({
       navigate("/dashboard");
     } catch (e) {
       alert("Error while signing up");
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -58,8 +63,12 @@ export function SignUpForm({
           <Label htmlFor="password">Password</Label>
           <Input id="password" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <Button type="submit" className="w-full">
-          Create Account
+        <Button type="submit" className="w-full" disabled={isLoading}>
+          {isLoading ? (
+            <LoadingSpinner className="h-5 w-5" />
+          ) : (
+            "Create Account"
+          )}
         </Button>
        
       </div>
