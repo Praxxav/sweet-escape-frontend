@@ -60,7 +60,7 @@ This project was built with significant assistance from AI tools that acted as a
 - **Dashboards:** I leveraged Gemini to scaffold dashboards (`Dashboard.tsx`, `AdminDashboard.tsx`) including layouts, grid structures, and modal form implementations.  
 - **Error Troubleshooting:** I used ChatGPT to debug configuration issues (e.g., Jest ES module errors, missing `test` script, Vercel/Render deployment fixes, CloudFront + S3 permissions).  
 - **DevOps & Config:** ChatGPT helped write `netlify.toml`, deployment scripts, ESLint configs, and guided me through Git/GitHub workflows.  
-- **Unit Testing:** I asked AI tools to generate starter test examples and explain test report setups (Jest/Vitest).  
+
 
 ### Reflection on AI’s Impact
 Using AI tools significantly accelerated my development process:
