@@ -42,6 +42,12 @@ Admin dashboard
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d5b4c75e-875f-4f5a-bfdf-8cec874be2ea" />
 User dashboard
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/925c3bb6-af39-4b64-a46c-0b9671ee73a8" />
+Database
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f6edabd9-0697-4aa1-a8b2-9bf390fff7da" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/12f35f4e-d65c-4f4c-98c1-69cda4916029" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a4e48975-6712-4626-a7a9-b066a9c6624f" />
+
+
 
 ## My AI Usage
 
